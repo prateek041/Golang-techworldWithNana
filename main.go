@@ -20,7 +20,7 @@ func main() { // only one main fucntion per program.
 	var firstName string
 	var lastName string
 	var email string
-	var userTicket int
+	var userTicket uint
 
 	// ask for the user input
 	fmt.Println("Enter your first name")
@@ -35,5 +35,9 @@ func main() { // only one main fucntion per program.
 	fmt.Println("Enter the number of tickets you want")
 	fmt.Scan(&userTicket)
 
+	// booking ticket logic.
+	remainingTickets -= userTicket // shorthand for remainingTickets = remainingTickets - userTicket.
+
 	fmt.Printf("Thank you %v %v for booking %v tickets. You will recieve a confirmation email at %v\n", firstName, lastName, userTicket, email)
+	fmt.Printf("%v tickets remaining", remainingTickets)
 }
