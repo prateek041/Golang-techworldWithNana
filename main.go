@@ -17,6 +17,8 @@ func main() { // only one main fucntion per program.
 	fmt.Println("Get your tickets here")
 	fmt.Printf("%v tickets remaining from %v tickets\n", remainingTickets, conferenceTickets)
 
+	// var bookings = [50] string{} // array : bookings, size : 50, data-type: string, currently empty.
+	var bookings [50]string // shorthand.
 	var firstName string
 	var lastName string
 	var email string
@@ -35,9 +37,16 @@ func main() { // only one main fucntion per program.
 	fmt.Println("Enter the number of tickets you want")
 	fmt.Scan(&userTicket)
 
+	// stroing the values in the database.
+	bookings[0] = firstName + " " + lastName
+	fmt.Printf("The whole array: %v\n", bookings)
+	fmt.Printf("The first value: %v\n", bookings[0])
+	fmt.Printf("The array type: %T\n", bookings)
+	fmt.Printf("The array length: %v\n", len(bookings))
+
 	// booking ticket logic.
 	remainingTickets -= userTicket // shorthand for remainingTickets = remainingTickets - userTicket.
 
 	fmt.Printf("Thank you %v %v for booking %v tickets. You will recieve a confirmation email at %v\n", firstName, lastName, userTicket, email)
-	fmt.Printf("%v tickets remaining", remainingTickets)
+	fmt.Printf("%v tickets remaining\n", remainingTickets)
 }
