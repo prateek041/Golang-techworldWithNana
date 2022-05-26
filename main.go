@@ -12,8 +12,8 @@ func main() { // There can only be one main function per application.
 	var conferenceName = "Go Conference" // Variable.
 	const conferenceTickets = 50         // Constant.
 	var remainingTickets = 50
-	fmt.Println("welcome to the", conferenceName, "booking application")
-	fmt.Println("Get your tickets here to print")
-	fmt.Println(conferenceTickets, "tickets remaining")
+	fmt.Printf("welcome to the %v booking application\n", conferenceName)
+	fmt.Println("Get your tickets here")
+	fmt.Printf("%v tickets remaining from %v tickets\n", remainingTickets, conferenceTickets)
 
 }
