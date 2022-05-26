@@ -6,24 +6,34 @@ import "fmt"
 
 // Go needs an entry point to start executing the program. It looks for a main function
 // to begin with.
-func main() { // There can only be one main function per application.
-	// fmt.Println("Hello world") // "Print" is a function in the fmt package.
+func main() { // only one main fucntion per program.
+	// fmt.Println("Hello world") // "Print": function in the fmt package.
 
 	// var conferenceName = "Go Conference"                               // Variable.
-	conferenceName := "Go conference"                                     // shorhand for variale declaration/assignment. has its restrictions.
+	conferenceName := "Go conference"                                     // shorthand for variale declaration/assignment. has its restrictions.
 	const conferenceTickets uint = 50                                     // Constant.
 	var remainingTickets uint = 50                                        // Go can assign the type, depending upon the data assigned.
 	fmt.Printf("welcome to the %v booking application\n", conferenceName) // %v is the placeholder
 	fmt.Println("Get your tickets here")
 	fmt.Printf("%v tickets remaining from %v tickets\n", remainingTickets, conferenceTickets)
 
-	var userName string
+	var firstName string
+	var lastName string
+	var email string
 	var userTicket int
-	// ask for the user input
 
-	userName = "prateek"
-	userTicket = 5
-	fmt.Printf("The user %v booked %v tickets\n", userName, userTicket) // we can use %T to print the type
-	// of the given variable.
-	fmt.Printf("conferenceTicket is of type %T, conferenceName is of type %T\n", conferenceTickets, conferenceName)
+	// ask for the user input
+	fmt.Println("Enter your first name")
+	fmt.Scan(&firstName) // scan user input and assign to userName variable.
+
+	fmt.Println("Enter your last name")
+	fmt.Scan(&lastName)
+
+	fmt.Println("Enter your email")
+	fmt.Scan(&email)
+
+	fmt.Println("Enter the number of tickets you want")
+	fmt.Scan(&userTicket)
+
+	fmt.Printf("Thank you %v %v for booking %v tickets. You will recieve a confirmation email at %v\n", firstName, lastName, userTicket, email)
 }
